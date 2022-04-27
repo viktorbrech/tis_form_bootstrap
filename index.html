@@ -1,75 +1,110 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <title>Sample Contact Us Page using Bootstrap 5.1 -- adapted from Sign-in custom component at https://getbootstrap.com/docs/5.1/examples/</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>Sample Contact Us Page using Bootstrap 5.1 -- adapted from Sign-in custom component at
+    https://getbootstrap.com/docs/5.1/examples/</title>
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="tis_form.css" rel="stylesheet">
-  </head>
-  <body class="text-center">
-    
-<main class="form-contactus">
-  <form id="contactusform">
-    <img class="mb-4" src="https://freesvg.org/img/1650957671blue-eye.png" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 fw-normal">Contact Us</h1>
-
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
-      <label for="floatingEmail">Email address</label>
-    </div>
-    <div class="form-floating">
-      <input type="text" class="form-control" id="floatingName" placeholder="Name">
-      <label for="floatingName">Your name</label>
-    </div>
-    <div class="form-floating">
-      <input type="text" class="form-control" id="floatingIssue" placeholder="Issue">
-      <label for="floatingIssue">What is this about?</label>
-    </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="contact-me"> Consent to receive an email response
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
-    <p class="mt-5 mb-3 text-muted">Happy to hear from you!</a></p>
-    <p class="mt-5 mb-3 text-muted">Check our <a href="https://www.w3.org/">Privacy Policy</a>.</p>
-  </form>
-</main>
-
-<script>
-document.querySelector("#contactusform").addEventListener("submit", function(e){
-    if(true){
-        e.preventDefault();    //stop form from submitting
-        console.log(e);
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
     }
-});
-</script>
-    
-  </body>
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="tis_form.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+  <main class="form-contactus">
+    <form id="contactusform">
+      <img class="mb-4" src="https://freesvg.org/img/1650957671blue-eye.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 fw-normal">Contact Us</h1>
+
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+        <label for="floatingEmail">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingName" placeholder="Name">
+        <label for="floatingName">Your name</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingIssue" placeholder="Issue">
+        <label for="floatingIssue">What is this about?</label>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" id="consentBox" value="contact-me"> Consent to receive an email response
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+      <p class="mt-5 mb-3 text-muted">Happy to hear from you!</a></p>
+      <p class="mt-5 mb-3 text-muted">Check our <a href="https://www.w3.org/">Privacy Policy</a>.</p>
+    </form>
+  </main>
+
+  <script>
+    document.querySelector("#contactusform").addEventListener("submit", function (e) {
+      if (true) {
+        e.preventDefault();
+        let form_fields = {
+          "email": document.querySelector("#floatingEmail").value,
+          "name": document.querySelector("#floatingName").value,
+          "issue": document.querySelector("#floatingIssue").value,
+          "consent": document.querySelector("#consentBox").value,
+        };
+        let hubspotutk = document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        if (hubspotutk != "") {
+          form_fields["hubspotutk"] = hubspotutk;
+        }
+
+        fetch('https://echnpg5eoqm6uomkku4l6iiphq0sqipd.lambda-url.eu-central-1.on.aws', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(form_fields),
+        })
+          .then(response => response.json())
+          .then(form_fields => {
+            console.log('Success:', form_fields);
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+
+        console.log(e);
+      }
+    });
+  </script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3967897.js"></script>
+<!-- End of HubSpot Embed Code -->
+</body>
+
 </html>
