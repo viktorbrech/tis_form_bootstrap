@@ -39,12 +39,12 @@
     <h1 class="h3 mb-3 fw-normal">Contact Us</h1>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingName" placeholder="Name">
-      <label for="floatingName">Your name</label>
-    </div>
-    <div class="form-floating">
       <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
       <label for="floatingEmail">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingName" placeholder="Name">
+      <label for="floatingName">Your name</label>
     </div>
     <div class="form-floating">
       <input type="text" class="form-control" id="floatingIssue" placeholder="Issue">
@@ -66,7 +66,7 @@
 document.querySelector("#contactusform").addEventListener("submit", function(e){
     if(true){
         e.preventDefault();    //stop form from submitting
-        console.log("submission attempted");
+        console.log(e);
     }
 });
 </script>
