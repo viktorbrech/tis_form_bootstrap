@@ -34,17 +34,21 @@
   <body class="text-center">
     
 <main class="form-contactus">
-  <form>
+  <form id="contactusform">
     <img class="mb-4" src="https://freesvg.org/img/1650957671blue-eye.png" alt="" width="72" height="72">
     <h1 class="h3 mb-3 fw-normal">Contact Us</h1>
 
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingName" placeholder="Name">
+      <label for="floatingName">Your name</label>
+    </div>
     <div class="form-floating">
       <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
       <label for="floatingEmail">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingIssue" placeholder="Password">
-      <label for="floatingIssue">Your issue</label>
+      <input type="text" class="form-control" id="floatingIssue" placeholder="Issue">
+      <label for="floatingIssue">What is this about?</label>
     </div>
 
     <div class="checkbox mb-3">
@@ -53,12 +57,19 @@
       </label>
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
-    <p class="mt-5 mb-3 text-muted">Please fill in your data.</a></p>
-    <p class="mt-5 mb-3 text-muted">Check our <a href="https://www.w3.org/">Privacy Policy</a></p>
+    <p class="mt-5 mb-3 text-muted">Happy to hear from you!</a></p>
+    <p class="mt-5 mb-3 text-muted">Check our <a href="https://www.w3.org/">Privacy Policy</a>.</p>
   </form>
 </main>
 
-
+<script>
+document.querySelector("#contactusform").addEventListener("submit", function(e){
+    if(true){
+        e.preventDefault();    //stop form from submitting
+        console.log("submission attempted");
+    }
+});
+</script>
     
   </body>
 </html>
