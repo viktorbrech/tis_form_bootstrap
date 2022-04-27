@@ -70,40 +70,49 @@
 
   <script>
     document.querySelector("#contactusform").addEventListener("submit", function (e) {
-      if (true) {
-        e.preventDefault();
-        let form_data = {
-          "email": document.querySelector("#floatingEmail").value,
-          "name": document.querySelector("#floatingName").value,
-          "issue": document.querySelector("#floatingIssue").value,
-          "consent": document.querySelector("#consentBox").checked,
-          "pageUri": window.location.href,
-          "pageName": "Contact Us"
-        };
-        let hubspotutk = document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-        if (hubspotutk != "") {
-          form_data["hubspotutk"] = hubspotutk;
-        }
-
-        fetch('https://echnpg5eoqm6uomkku4l6iiphq0sqipd.lambda-url.eu-central-1.on.aws', {
-          method: 'POST',
-          body: JSON.stringify(form_data),
-        })
-          .then(response => response.json())
-          .then(form_data => {
-            console.log('Success:', form_data);
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
-
-        console.log(e);
+      e.preventDefault();
+      let form_data = {
+        "email": document.querySelector("#floatingEmail").value,
+        "name": document.querySelector("#floatingName").value,
+        "issue": document.querySelector("#floatingIssue").value,
+        "consent": document.querySelector("#consentBox").checked,
+        "pageUri": window.location.href,
+        "pageName": "Contact Us"
+      };
+      let hubspotutk = document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+      if (hubspotutk != "") {
+        form_data["hubspotutk"] = hubspotutk;
       }
+
+      var url = new URL("https://echnpg5eoqm6uomkku4l6iiphq0sqipd.lambda-url.eu-central-1.on.aws");
+      for (let k in form_data) { url.searchParams.append(k, form_data[k]); }
+      fetch(url)
+        .then(response => response.json())
+        .then(form_data => {
+          console.log('Success:', form_data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+
+      /*
+      fetch('https://echnpg5eoqm6uomkku4l6iiphq0sqipd.lambda-url.eu-central-1.on.aws', {
+        method: 'POST',
+        body: JSON.stringify(form_data),
+      })
+        .then(response => response.json())
+        .then(form_data => {
+          console.log('Success:', form_data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      */
     });
   </script>
-<!-- Start of HubSpot Embed Code -->
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3967897.js"></script>
-<!-- End of HubSpot Embed Code -->
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3967897.js"></script>
+  <!-- End of HubSpot Embed Code -->
 </body>
 
 </html>
