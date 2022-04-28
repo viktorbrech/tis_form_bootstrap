@@ -90,12 +90,11 @@
         if (response.ok) {
           window.location.href = "https://viktorbrech.github.io/tis_form_bootstrap/thankyou.html";
         } else {
-          let myconsole = document.querySelector("#myinlineconsole")
-          myconsole.innerHTML = "Sorry, could not submit: " + error;
+          let myconsole = document.querySelector("#myinlineconsole");
+          myconsole.innerHTML = "Sorry, could not submit: " + response.text();
           myconsole.style.color = "red";
         }
-        return response.text();
-        })
+      })
 
       /*
       fetch('https://echnpg5eoqm6uomkku4l6iiphq0sqipd.lambda-url.eu-central-1.on.aws', {
