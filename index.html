@@ -92,7 +92,7 @@
         } else {
           let myconsole = document.querySelector("#myinlineconsole");
           myconsole.innerHTML = "Sorry, could not submit: " + response.text();
-          myconsole.style.color = "red!important";
+          myconsole.style.setProperty("color", "red", "important");
         }
       })
 
