@@ -63,7 +63,7 @@
         </label>
       </div>
       <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
-      <p class="mt-5 mb-3 text-muted">Happy to hear from you!</a></p>
+      <p class="mt-5 mb-3 text-muted" id="myinlineconsole">Happy to hear from you!</a></p>
       <p class="mt-5 mb-3 text-muted">Check our <a href="https://www.w3.org/">Privacy Policy</a>.</p>
     </form>
   </main>
@@ -89,10 +89,13 @@
       fetch(url)
         .then(response => response.json())
         .then(form_data => {
+          window.location.href = "https://viktorbrech.github.io/tis_form_bootstrap/thankyou.html";
           console.log('Success:', form_data);
         })
         .catch((error) => {
-          console.error('Error:', error);
+          let myconsole = document.querySelector("#myinlineconsole")
+          myconsole.innerHTML = "Sorry, could not submit: " + error;
+          myconsole.style.color = "red";
         });
 
       /*
