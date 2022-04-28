@@ -86,17 +86,16 @@
 
       var url = new URL("https://echnpg5eoqm6uomkku4l6iiphq0sqipd.lambda-url.eu-central-1.on.aws");
       for (let k in form_data) { url.searchParams.append(k, form_data[k]); }
-      fetch(url)
-        .then(response => response.json())
-        .then(form_data => {
+      fetch(url).then(function (response) {
+        if (response.ok) {
           window.location.href = "https://viktorbrech.github.io/tis_form_bootstrap/thankyou.html";
-          console.log('Success:', form_data);
-        })
-        .catch((error) => {
+        } else {
           let myconsole = document.querySelector("#myinlineconsole")
           myconsole.innerHTML = "Sorry, could not submit: " + error;
           myconsole.style.color = "red";
-        });
+        }
+        return response.text();
+        })
 
       /*
       fetch('https://echnpg5eoqm6uomkku4l6iiphq0sqipd.lambda-url.eu-central-1.on.aws', {
